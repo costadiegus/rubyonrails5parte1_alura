@@ -1,45 +1,53 @@
 <html>
+    <head>
+        <title>Loja Ruby on Rails 5</title>
+    </head>
     <body>
-        <table>
-            <thead>
-                <tr>
-                    <td>Nome</td>
-                    <td>Descrição</td>
-                    <td>Preço</td>
-                    <td>Quantidade</td>
-                </tr>
-            </thead>
-            <tbody>
-            <% @produtos.each do |produto| %>
-                <tr>
-                    <td><%= produto.nome %></td>
-                    <td><%= produto.descricao %></td>
-                    <td><%= produto.preco %></td>
-                    <td><%= produto.quantidade %></td>
-                </tr>
-            <% end %>
-            </tbody>
-        </table>
-        <table>
-            <thead>
-                <tr>
-                    <td>Nome</td>
-                    <td>Descrição</td>
-                    <td>Preço</td>
-                    <td>Quantidade</td>
-                </tr>
-            </thead>
-            <h3>Produtos com desconto</h3>
-            <tbody>
-            <% @produtos_com_menor_preco.each do |produto| %>
-                <tr>
-                    <td><%= produto.nome %></td>
-                    <td><%= produto.descricao %></td>
-                    <td><%= produto.preco %></td>
-                    <td><%= produto.quantidade %></td>
-                </tr>
-            <% end %>
-            </tbody>
-        </table>
+        <%= nav_bar brand: "Loja", brand_link: root_url  %>
+        <div class="container">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <td>Nome</td>
+                        <td>Descrição</td>
+                        <td>Preço</td>
+                        <td>Quantidade</td>
+                    </tr>
+                </thead>
+                <tbody>
+                <% @produtos.each do |produto| %>
+                    <tr>
+                        <td><%= produto.nome %></td>
+                        <td><%= produto.descricao %></td>
+                        <td><%= produto.preco %></td>
+                        <td><%= produto.quantidade %></td>
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
+            <div class="alert alert-success" role="alert">
+                <h3 class="alert-heading">Produtos com desconto</h3>
+            </div>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <td>Nome</td>
+                        <td>Descrição</td>
+                        <td>Preço</td>
+                        <td>Quantidade</td>
+                    </tr>
+                </thead>
+                <tbody>
+                <% @produtos_com_menor_preco.each do |produto| %>
+                    <tr>
+                        <td><%= produto.nome %></td>
+                        <td><%= produto.descricao %></td>
+                        <td><%= produto.preco %></td>
+                        <td><%= produto.quantidade %></td>
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>
